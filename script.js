@@ -59,6 +59,10 @@ function passaValorTag(valor)
 }
 
 function queryString(parameter) {  
+    if(!location.search){
+        carregar();
+        return;
+    }
     var loc = location.search.substring(1, location.search.length);  
     var param_value = false;   
     var params = loc.split("&");   
